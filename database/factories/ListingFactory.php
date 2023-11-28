@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,6 +18,7 @@ class ListingFactory extends Factory
     public function definition()
     {
         return [
+            'user_id' => User::factory(), // Assuming you have a User factory.
             'title' => $this->faker->sentence(),
             'tags' => 'laravel, api, backend',
             'company' => $this->faker->company(),
