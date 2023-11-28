@@ -133,8 +133,9 @@ class StoreListingTest extends TestCase
 
         // Optional: Assert that the associated logo file is deleted from storage
         if ($listing->logo) {
-            $this->assertFileNotExists(storage_path('app/public/' . $listing->logo));
+            $this->assertFileDoesNotExist(storage_path('app/public/' . $listing->logo));
         }
+    
     }
 
     public function test_authenticated_user_can_access_manage_view()
